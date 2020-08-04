@@ -1,0 +1,8 @@
+const constants = {
+    ADD_PLAYLIST: 'ADD_PLAYLIST',
+    DELETE_PLAYLIST: 'DELETE_PLAYLIST',
+    ADD_TRACK: 'ADD_TRACK',
+    FETCH_TRACKS_SUCCESS: 'FETCH_TRACKS_SUCCESS',
+    FILTER_TRACK: 'FILTER_TRACK'
+}
+export default constants

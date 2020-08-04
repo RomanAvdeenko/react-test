@@ -1,26 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
+import { composeWithDevTools } from 'redux-devtools-extension'
+import thunk from 'redux-thunk'
 
 import './index.css'
 import App from './App'
+import reduser from './reducers'
 
-const initState = [
-    'Группа крови',
-    'Кукушка'
-]
-
-const playlist = (state = initState, action) => {
-    if (action.type === 'ADD_TRACK')
-        return [
-            ...state,
-            action.payload
-        ]
-    return state
-}
-
-const store = createStore(playlist)
+const store = createStore(reduser, composeWithDevTools(applyMiddleware(thunk)))
 
 ReactDOM.render(
     <Provider store={store}>
